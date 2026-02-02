@@ -139,6 +139,7 @@ footer {
 .disclaimer {
     color: #666;
     font-size: 0.8rem;
+    font-weight: 200;
 }
 
 
@@ -162,6 +163,123 @@ footer {
     border-radius: 20px;
     z-index: 5;
     box-shadow: 0 0 10px rgba(188, 19, 254, 0.6);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--neon-blue);
+    cursor: pointer;
+}
+
+/* Mobile */
+/* Refined Navbar 2026 Style */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    /* Transparent dark */
+    backdrop-filter: blur(10px);
+    /* Glass effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    padding: 0.8rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ff0000, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Hover Underglow Effect */
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.8);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #ff00ff;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide by default on mobile, toggle with JS */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(10, 10, 10, 0.95);
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.badge.limited {
+    background: #ff0000;
+    color: #ffffff;
+    box-shadow: 0 0 15px #ff0000;
+    /* Neon glow effect */
+    animation: pulse 2s infinite;
 }
 
 /* Clickable Price Style */
