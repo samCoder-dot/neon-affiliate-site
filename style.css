@@ -9,6 +9,10 @@
     --neon-red: #ff003c;
     --text-main: #e0e0e0;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
     background-color: var(--dark-bg);
@@ -299,3 +303,9 @@ footer {
     background: rgba(0, 242, 255, 0.1);
     border-style: solid;
 }
+
+
+/* --- High-Stability Neon Badges (No Keyframes) --- */
+
+/* Base Badge Style */
+
