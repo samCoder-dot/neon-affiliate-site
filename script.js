@@ -1,16 +1,15 @@
-// Log interaction or handle dynamic events here
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Neon affiliate site loaded successfully.');
-
-    // Example: Track clicks on affiliate buttons
-    const buttons = document.querySelectorAll('.affiliate-btn');
-    buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const productName = e.target.closest('.product-card').querySelector('h3').innerText;
-            console.log(`User clicked affiliate link for: ${productName}`);
-        });
-    });
-});
+// 1. Existing Menu Toggle Logic
 document.getElementById('menu-toggle').addEventListener('click', function () {
     document.getElementById('nav-links').classList.toggle('active');
+});
+
+// 2. NEW: Auto-Close Logic for Mobile
+// This selects all links inside your navigation
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // This removes the 'active' class, hiding the menu immediately after a click
+        document.getElementById('nav-links').classList.remove('active');
+    });
 });
