@@ -16,32 +16,73 @@
     <meta name="p:domain_verify" content="d5539f1d024b4ce63e6be07b51fad15c" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name='impact-site-verification' value='55b9b5f8-0e08-4ce2-a70d-5e348a97991e'>
+
+
+
+ <style>
+        /* INLINE STYLES FOR THE ANIMATED HEADER VIBE */
+        .aesthetic-header {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #050507;
+            overflow: hidden;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .neon-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s infinite alternate;
+        }
+
+        .cyan { width: 300px; height: 300px; background: #00ffcc; top: -50px; left: 10%; }
+        .purple { width: 400px; height: 400px; background: #bc13fe; bottom: -100px; right: 15%; animation-delay: -5s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 60px) scale(1.1); }
+        }
+
+        .header-content { position: relative; z-index: 10; padding: 0 20px; }
+        .glitch-text { font-size: clamp(2rem, 7vw, 4rem); font-weight: 900; color: #fff; letter-spacing: -2px; line-height: 1.1; margin-bottom: 15px; }
+        .highlight { color: #00ffcc; text-shadow: 0 0 30px rgba(0, 255, 204, 0.5); display: block; }
+        .subtitle-aesthetic { font-size: 0.9rem; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: #a1a1a1; }
+    </style>
 </head>
 
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">NeonRoom</div>
-
-            <div class="menu-toggle" id="menu-toggle">
-                ☰
-            </div>
-
+            <div class="logo" style="font-weight: 900; letter-spacing: 2px;">NEON<span style="color: #00ffcc;">ROOM</span></div>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#dark-hero">Dark Hero</a></li>
                 <li><a href="#gaming">Gaming</a></li>
                 <li><a href="#anime">Anime</a></li>
                 <li><a href="#movie">Pop Culture</a></li>
-                <li><a href='#new-collection'>New Collection 2026</a></li>
-                <li><a href="#digital" class="digital-nav-item" style="color: #00ffcc;">Creator Tools ⚡</a></li>
+                <li><a href='#new-collection'>2026 New</a></li>
+                <li><a href="#digital" class="digital-nav-item" style="color: #00ffcc; font-weight: 700;">CREATOR TOOLS ⚡</a></li>
             </ul>
         </div>
     </nav>
-    <header>
-        <div class="container">
-            <h1>Epic Neon & Character Room Decor Ideas (2026)</h1>
-            <p class="subtitle">Illuminate your space with the ultimate glow</p>
+
+    <header class="aesthetic-header">
+        <div class="neon-bg">
+            <div class="circle cyan"></div>
+            <div class="circle purple"></div>
+        </div>
+        <div class="header-content">
+            <h1 class="glitch-text">Epic Neon & Character <span class="highlight">Room Decor 2026</span></h1>
+            <p class="subtitle-aesthetic">Illuminate your sanctuary with the ultimate glow</p>
         </div>
     </header>
 
