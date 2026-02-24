@@ -178,6 +178,32 @@ footer {
 
 /* Mobile */
 /* Refined Navbar 2026 Style */
+.trust-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.trust-label span {
+    color: #00f2ff; /* Cyan Neon */
+    text-shadow: 0 0 5px #00f2ff;
+    font-weight: bold;
+}
+
+.secure-icon {
+    width: 12px;
+    height: 12px;
+    background: #00f2ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00f2ff;
+}
+
 .navbar {
     position: sticky;
     top: 0;
@@ -308,4 +334,5 @@ footer {
 /* --- High-Stability Neon Badges (No Keyframes) --- */
 
 /* Base Badge Style */
+
 
