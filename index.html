@@ -141,6 +141,13 @@ body::before {
   border: none;
 }
 
+.about-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 @media (max-width: 768px) {
   .menu-toggle { display: block; }
   .nav-links {
@@ -958,6 +965,314 @@ footer {
 .stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.19s; }
 .stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.26s; }
 
+/* =========================================
+   AMAZON DISCLOSURE BAR
+   ========================================= */
+.disclosure-bar {
+  background: rgba(0,245,212,0.05);
+  border-bottom: 1px solid rgba(0,245,212,0.12);
+  text-align: center;
+  padding: 9px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+.disclosure-bar a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================
+   PRODUCT CARD — RATINGS & FEATURE
+   ========================================= */
+
+
+
+.p-card-feature {
+  font-size: 0.78rem;
+  color: rgba(0,245,212,0.7);
+  border-left: 2px solid rgba(0,245,212,0.3);
+  padding-left: 9px;
+  margin: 2px 0;
+  line-height: 1.4;
+}
+
+/* =========================================
+   NEONROOM PICK BADGE
+   ========================================= */
+.pick-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  background: rgba(0,245,212,0.04);
+  border: 1px solid rgba(0,245,212,0.15);
+  border-radius: 6px;
+  padding: 9px 12px;
+  margin: 2px 0;
+}
+.pick-badge-icon {
+  font-size: 0.7rem;
+  color: var(--cyan);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.pick-badge-text {
+  font-size: 0.75rem;
+  color: #bbb;
+  line-height: 1.45;
+}
+.pick-badge-text strong {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+/* =========================================
+   ABOUT SECTION — REFINED
+   ========================================= */
+.about-section {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,245,212,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.about-section::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; left: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192,38,211,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.about-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .about-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* — Left panel — */
+.about-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.about-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,245,212,0.12), rgba(192,38,211,0.12));
+  border: 2px solid rgba(0,245,212,0.3);
+  box-shadow: 0 0 40px rgba(0,245,212,0.1), 0 0 0 8px rgba(0,245,212,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  line-height: 1;
+  position: relative;
+}
+.about-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0,245,212,0.2);
+  animation: spin-slow 20s linear infinite;
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+.about-handle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  background: rgba(0,245,212,0.06);
+  border: 1px solid rgba(0,245,212,0.2);
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+/* Stats row */
+.about-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+.about-stat {
+  text-align: center;
+  flex: 1;
+  padding: 14px 10px;
+  border-right: 1px solid var(--border);
+}
+.about-stat:last-child { border-right: none; }
+.about-stat-num {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  color: var(--cyan);
+  display: block;
+  line-height: 1;
+  text-shadow: 0 0 16px rgba(0,245,212,0.4);
+}
+.about-stat-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Trust badges on left */
+.about-trust-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.about-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+.about-trust-badge i { font-size: 0.75rem; }
+.badge-i-amazon { color: #ff9900; }
+.badge-i-check  { color: var(--cyan); }
+.badge-i-star   { color: var(--gold); }
+
+/* — Right panel — */
+.about-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.about-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px; height: 1px;
+  background: var(--cyan);
+  opacity: 0.6;
+}
+.about-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1.02;
+  margin-bottom: 24px;
+}
+.about-heading span { color: var(--cyan); text-shadow: 0 0 30px rgba(0,245,212,0.4); }
+
+/* Story blocks */
+.about-story {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.about-story-block {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.about-story-icon {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 6px;
+  background: rgba(0,245,212,0.07);
+  border: 1px solid rgba(0,245,212,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--cyan);
+  margin-top: 2px;
+}
+.about-story-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.about-story-text strong { color: #ddd; font-weight: 600; }
+
+/* Disclosure callout */
+.about-disclosure {
+  background: rgba(0,245,212,0.04);
+  border: 1px solid rgba(0,245,212,0.15);
+  border-left: 3px solid var(--cyan);
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.about-disclosure strong { color: var(--cyan); }
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.about-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.about-tag.active {
+  border-color: rgba(0,245,212,0.35);
+  color: var(--cyan);
+  background: rgba(0,245,212,0.05);
+}
+
+
+
 </style>
 </head>
 <body>
@@ -979,6 +1294,15 @@ footer {
     </ul>
   </div>
 </nav>
+
+<!-- =====================
+     AMAZON DISCLOSURE BAR
+     ===================== -->
+<div class="disclosure-bar">
+  <i class="fas fa-shield-alt" style="color:var(--cyan);margin-right:6px;font-size:0.65rem;"></i>
+  As an Amazon Associate &amp; DigiStore24 Partner, we earn from qualifying purchases — at no extra cost to you.
+  <a href="#about">Learn about us</a>
+</div>
 
 <!-- =====================
      HERO
@@ -1075,6 +1399,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Bat Lamp "The Dark Knight" LED</div>
+          <div class="pick-badge">
+            <i class="fas fa-bolt pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> 16-colour remote + USB power — the most versatile dark hero lamp we've tested.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/3ZQnCeF" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1088,6 +1416,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Joker "Ha Ha" Neon Graffiti</div>
+          <div class="pick-badge">
+            <i class="fas fa-bolt pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Full flex-tube LED with smooth dimming — the Joker neon that actually looks cinematic on camera.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4rLQtx1" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1101,6 +1433,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Venom Symbiote Neon Face</div>
+          <div class="pick-badge">
+            <i class="fas fa-bolt pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Ships gift-box ready with acrylic LED that holds its glow for years — our top dark hero shelf piece.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/3Oh7K2k" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1114,6 +1450,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">The Punisher's Vengeance Glow</div>
+          <div class="pick-badge">
+            <i class="fas fa-bolt pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Hand-crafted LED tube available in multiple sizes — rare for this price range.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4tdDrd2" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1147,6 +1487,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">LED Mask — Gesture Sensing Light Up</div>
+          <div class="pick-badge">
+            <i class="fas fa-gamepad pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Motion-activated + rechargeable — the only gaming mask that reacts to your moves.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4trvoJL" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1159,6 +1503,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">"Player 1" Kanji Neon Glow</div>
+          <div class="pick-badge">
+            <i class="fas fa-gamepad pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Mounts on wall or desk — fits any setup without drilling or extra hardware.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4raEzNa" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1171,6 +1519,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Hannya "Cyber-Oni" Tattoo Neon</div>
+          <div class="pick-badge">
+            <i class="fas fa-gamepad pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Hand-bent LED in authentic Japanese art style — no other gaming neon looks like this.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4rC5KA5" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1204,6 +1556,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Anime Character Neon Sign</div>
+          <div class="pick-badge">
+            <i class="fas fa-star pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Available in custom sizes — rare for anime neons at this price point.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4bMgqaN" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1237,6 +1593,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">AI "Spatial Cinema" Sync Kit</div>
+          <div class="pick-badge">
+            <i class="fas fa-film pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> AI colour-sync via HDMI 2.1 + Alexa support — turns any room into a cinema effortlessly.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4runxdb" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1249,6 +1609,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Northern Galaxy Aurora Projector — 33 Effects</div>
+          <div class="pick-badge">
+            <i class="fas fa-film pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> 33 modes + built-in Bluetooth speaker — the only projector that doubles as a sound system.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4tteeLB" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1261,6 +1625,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">GVM RGB LED Video Lighting Kit</div>
+          <div class="pick-badge">
+            <i class="fas fa-film pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> CRI 97+ full-spectrum RGB — professional studio-grade lighting at a consumer price.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/407JiDa" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1294,6 +1662,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Bat Cave Neon Sign</div>
+          <div class="pick-badge">
+            <i class="fas fa-fire pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Multiple colour options with remote dimmer — the Bat Cave sign that went viral on Pinterest 2026.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4cnPjmF" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1306,6 +1678,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Comics Green Fist Neon Sign</div>
+          <div class="pick-badge">
+            <i class="fas fa-fire pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Comes with both USB and wall adapter — works anywhere, no dongles needed.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/402bB5Z" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1318,6 +1694,10 @@ footer {
         </div>
         <div class="p-card-body">
           <div class="p-card-name">Skull Neon Sign</div>
+          <div class="pick-badge">
+            <i class="fas fa-fire pick-badge-icon"></i>
+            <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Cold-white LED with smooth dimming — the skull neon that photographs best for setups.</span>
+          </div>
           <div class="p-card-price">⟶ Check Current Price on Amazon</div>
           <a href="https://amzn.to/4bItQoh" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
         </div>
@@ -1328,6 +1708,96 @@ footer {
 </section>
 
 <div class="glow-bar"></div>
+
+<!-- =====================
+     ABOUT SECTION
+     ===================== -->
+<!-- =====================
+     ABOUT SECTION (REFINED)
+     ===================== -->
+<section id="about" class="about-section">
+  <div class="about-inner">
+
+    <!-- LEFT: Avatar + Stats + Trust Badges -->
+    <div class="about-avatar-wrap reveal">
+      <div class="about-avatar">
+        <img src="https://i.pinimg.com/280x280_RS/46/d7/66/46d766aa530dbd1d155c5d9696137853.jpg" alt="Neon Room Logo" class="about-avatar-img">
+      </div>
+      <div class="about-handle">NeonRoom</div>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="about-stat-num">500+</span>
+          <span class="about-stat-lbl">Products</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">4.6★</span>
+          <span class="about-stat-lbl">Avg Rating</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">30K+</span>
+          <span class="about-stat-lbl">Reviews</span>
+        </div>
+      </div>
+
+      <div class="about-trust-row">
+        <div class="about-trust-badge">
+          <i class="fab fa-amazon badge-i-amazon"></i>
+          Amazon Associates Partner
+        </div>
+        <div class="about-trust-badge">
+          <i class="fas fa-check-circle badge-i-check"></i>
+          No paid placements — ever
+        </div>
+        <div class="about-trust-badge">
+          <i class="fas fa-star badge-i-star"></i>
+          Hand-verified product ratings
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Story copy -->
+    <div class="reveal">
+      <span class="about-label">Who's behind NeonRoom</span>
+      <h2 class="about-heading">Dark rooms.<br><span>Real curation.</span></h2>
+
+      <div class="about-story">
+        <div class="about-story-block">
+          <div class="about-story-icon"><i class="fas fa-search"></i></div>
+          <div class="about-story-text">
+            I got tired of scrolling through <strong>hundreds of generic room decor sites</strong> that regurgitate the same Amazon bestsellers with zero taste filtering. So I built NeonRoom from scratch — a site where every single pick actually looks good in a dark setup.
+          </div>
+        </div>
+        <div class="about-story-block">
+          <div class="about-story-icon"><i class="fas fa-filter"></i></div>
+          <div class="about-story-text">
+            <strong>Every product passes a 3-point filter:</strong> real Amazon rating above 4.4, a minimum of 700 verified reviews, and it has to genuinely fit the dark hero / gaming / anime aesthetic. If it fails any one of those, it's gone.
+          </div>
+        </div>
+        <div class="about-story-block">
+          <div class="about-story-icon"><i class="fas fa-bolt"></i></div>
+          <div class="about-story-text">
+            I update the collection every few months to <strong>drop products that slip in quality</strong> and add whatever's trending in the dark aesthetic space. You'll never find a stale 2022 pick still sitting here in 2026.
+          </div>
+        </div>
+      </div>
+
+      <div class="about-disclosure">
+        <strong>Affiliate disclosure:</strong> When you click through to Amazon or DigiStore24, I earn a small commission — that's what keeps this site free and ad-free. <strong>Your price never changes.</strong> I only recommend what I'd actually buy myself.
+      </div>
+
+      <div class="about-tags">
+        <span class="about-tag active">Dark Hero</span>
+        <span class="about-tag active">Gaming Setup</span>
+        <span class="about-tag active">Anime Aesthetic</span>
+        <span class="about-tag">Gotham Vibes</span>
+        <span class="about-tag">Digital Creator</span>
+        <span class="about-tag active">2026 Trends</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- =====================
      DIGITAL SECTION
