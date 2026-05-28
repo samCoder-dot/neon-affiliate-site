@@ -966,6 +966,206 @@ footer {
 .stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.26s; }
 
 /* =========================================
+   DUAL BUY BUTTONS
+   ========================================= */
+.btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+.btn-amazon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  background: transparent;
+  border: 1px solid rgba(255,153,0,0.45);
+  color: #ff9900;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.btn-amazon:hover {
+  background: #ff9900;
+  color: #000;
+  box-shadow: 0 0 16px rgba(255,153,0,0.35);
+  transform: translateY(-2px);
+}
+.btn-aliexpress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  background: transparent;
+  border: 1px solid rgba(255,45,85,0.45);
+  color: #ff2d55;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.btn-aliexpress:hover {
+  background: #ff2d55;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(255,45,85,0.35);
+  transform: translateY(-2px);
+}
+/* Amazon-only card — single full-width button */
+.btn-amazon-solo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 16px;
+  background: transparent;
+  border: 1px solid rgba(255,153,0,0.45);
+  color: #ff9900;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.25s;
+  text-decoration: none;
+  margin-top: auto;
+}
+.btn-amazon-solo:hover {
+  background: #ff9900;
+  color: #000;
+  box-shadow: 0 0 16px rgba(255,153,0,0.35);
+  transform: translateY(-2px);
+}
+
+/* store label chips under price */
+.store-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.chip-store {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+.chip-amz  { background: rgba(255,153,0,0.1);  color: #ff9900; border: 1px solid rgba(255,153,0,0.3); }
+.chip-ali  { background: rgba(255,45,85,0.1);   color: #ff2d55; border: 1px solid rgba(255,45,85,0.3); }
+
+/* =========================================
+   FAIRY LIGHTS SECTION
+   ========================================= */
+:root {
+  --warm: #ffb347;
+  --blush: #ff6b9d;
+}
+.fairy-section {
+  background: linear-gradient(180deg, var(--black) 0%, #0d0810 50%, var(--black) 100%);
+}
+.fairy-section .sec-title span { color: var(--blush); text-shadow: 0 0 20px rgba(255,107,157,0.4); }
+.fairy-section .sec-label { color: var(--blush); }
+
+.f-card {
+  background: var(--panel);
+  border: 1px solid rgba(255,107,157,0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), border-color 0.35s, box-shadow 0.35s;
+}
+.f-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,107,157,0.35);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(255,107,157,0.07);
+}
+.f-card-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #0f0812;
+}
+.f-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.f-card:hover .f-card-img img { transform: scale(1.06); }
+.f-card-img::after {
+  content: 'VIEW PRODUCT →';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: var(--blush);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.f-card:hover .f-card-img::after { opacity: 1; }
+
+.f-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ff6b9d, #ffb347);
+  color: #000;
+  box-shadow: 0 0 12px rgba(255,107,157,0.45);
+}
+
+.f-card-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+.f-card-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #fff;
+  line-height: 1.3;
+}
+.f-pick {
+  font-size: 0.76rem;
+  color: rgba(255,179,71,0.8);
+  border-left: 2px solid rgba(255,107,157,0.4);
+  padding-left: 9px;
+  line-height: 1.5;
+}
+.f-pick strong { color: var(--blush); }
+
+/* =========================================
    AMAZON DISCLOSURE BAR
    ========================================= */
 .disclosure-bar {
@@ -1290,6 +1490,7 @@ footer {
       <li><a href="#anime">Anime</a></li>
       <li><a href="#movie">Pop Culture</a></li>
       <li><a href="#new-collection">2026 New</a></li>
+      <li><a href="#fairy-lights" style="color:#ff6b9d;">Fairy Lights 🌸</a></li>
       <li><a href="#digital" class="highlight-link">Creator Tools ⚡</a></li>
     </ul>
   </div>
@@ -1300,7 +1501,7 @@ footer {
      ===================== -->
 <div class="disclosure-bar">
   <i class="fas fa-shield-alt" style="color:var(--cyan);margin-right:6px;font-size:0.65rem;"></i>
-  As an Amazon Associate &amp; DigiStore24 Partner, we earn from qualifying purchases — at no extra cost to you.
+  As an Amazon Associate, AliExpress Affiliate &amp; DigiStore24 Partner, we earn from qualifying purchases — at no extra cost to you.
   <a href="#about">Learn about us</a>
 </div>
 
@@ -1364,14 +1565,18 @@ footer {
     <span class="marquee-item"><i class="fas fa-star"></i> Trending on Pinterest 2026</span>
     <span class="marquee-item"><i class="fas fa-bolt"></i> Joker Ha Ha Neon Sign</span>
     <span class="marquee-item"><i class="fas fa-fire"></i> Cyber-Oni Gaming Neon</span>
-    <span class="marquee-item"><i class="fas fa-star"></i> Bat Cave Sign — Viral Pick</span>
+    <span class="marquee-item"><i class="fas fa-seedling"></i> Fairy Lights — New Section</span>
+    <span class="marquee-item"><i class="fas fa-star"></i> Crystal Bubble Ball Lights</span>
     <span class="marquee-item"><i class="fas fa-bolt"></i> Aurora Galaxy Projector</span>
+    <span class="marquee-item"><i class="fas fa-shopping-bag"></i> Now on Amazon + AliExpress</span>
     <span class="marquee-item"><i class="fas fa-fire"></i> Batman Dark Knight Neon</span>
     <span class="marquee-item"><i class="fas fa-star"></i> Trending on Pinterest 2026</span>
     <span class="marquee-item"><i class="fas fa-bolt"></i> Joker Ha Ha Neon Sign</span>
     <span class="marquee-item"><i class="fas fa-fire"></i> Cyber-Oni Gaming Neon</span>
-    <span class="marquee-item"><i class="fas fa-star"></i> Bat Cave Sign — Viral Pick</span>
+    <span class="marquee-item"><i class="fas fa-seedling"></i> Fairy Lights — New Section</span>
+    <span class="marquee-item"><i class="fas fa-star"></i> Crystal Bubble Ball Lights</span>
     <span class="marquee-item"><i class="fas fa-bolt"></i> Aurora Galaxy Projector</span>
+    <span class="marquee-item"><i class="fas fa-shopping-bag"></i> Now on Amazon + AliExpress</span>
   </div>
 </div>
 
@@ -1403,8 +1608,14 @@ footer {
             <i class="fas fa-bolt pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> 16-colour remote + USB power — the most versatile dark hero lamp we've tested.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/3ZQnCeF" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+            <span class="chip-store chip-ali">AliExpress</span>
+          </div>
+          <div class="btn-group">
+            <a href="https://amzn.to/3ZQnCeF" class="btn-amazon" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> Amazon</a>
+            <a href="https://s.click.aliexpress.com/e/_c3C3Meqz" class="btn-aliexpress" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> AliExpress</a>
+          </div>
         </div>
       </div>
 
@@ -1420,8 +1631,14 @@ footer {
             <i class="fas fa-bolt pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Full flex-tube LED with smooth dimming — the Joker neon that actually looks cinematic on camera.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4rLQtx1" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+            <span class="chip-store chip-ali">AliExpress</span>
+          </div>
+          <div class="btn-group">
+            <a href="https://amzn.to/4rLQtx1" class="btn-amazon" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> Amazon</a>
+            <a href="https://s.click.aliexpress.com/e/_c4NvD0Q9" class="btn-aliexpress" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> AliExpress</a>
+          </div>
         </div>
       </div>
 
@@ -1437,8 +1654,14 @@ footer {
             <i class="fas fa-bolt pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Ships gift-box ready with acrylic LED that holds its glow for years — our top dark hero shelf piece.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/3Oh7K2k" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+            <span class="chip-store chip-ali">AliExpress</span>
+          </div>
+          <div class="btn-group">
+            <a href="https://amzn.to/3Oh7K2k" class="btn-amazon" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> Amazon</a>
+            <a href="https://s.click.aliexpress.com/e/_c3aRXU7X" class="btn-aliexpress" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> AliExpress</a>
+          </div>
         </div>
       </div>
 
@@ -1454,8 +1677,14 @@ footer {
             <i class="fas fa-bolt pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Hand-crafted LED tube available in multiple sizes — rare for this price range.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4tdDrd2" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+            <span class="chip-store chip-ali">AliExpress</span>
+          </div>
+          <div class="btn-group">
+            <a href="https://amzn.to/4tdDrd2" class="btn-amazon" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> Amazon</a>
+            <a href="https://s.click.aliexpress.com/e/_c41pb41j" class="btn-aliexpress" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> AliExpress</a>
+          </div>
         </div>
       </div>
 
@@ -1491,8 +1720,14 @@ footer {
             <i class="fas fa-gamepad pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Motion-activated + rechargeable — the only gaming mask that reacts to your moves.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4trvoJL" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+            <span class="chip-store chip-ali">AliExpress</span>
+          </div>
+          <div class="btn-group">
+            <a href="https://amzn.to/4trvoJL" class="btn-amazon" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> Amazon</a>
+            <a href="https://s.click.aliexpress.com/e/_c2vhlTtJ" class="btn-aliexpress" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> AliExpress</a>
+          </div>
         </div>
       </div>
 
@@ -1507,8 +1742,14 @@ footer {
             <i class="fas fa-gamepad pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Mounts on wall or desk — fits any setup without drilling or extra hardware.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4raEzNa" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+            <span class="chip-store chip-ali">AliExpress</span>
+          </div>
+          <div class="btn-group">
+            <a href="https://amzn.to/4raEzNa" class="btn-amazon" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> Amazon</a>
+            <a href="https://s.click.aliexpress.com/e/_c2QQXfXb" class="btn-aliexpress" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> AliExpress</a>
+          </div>
         </div>
       </div>
 
@@ -1523,8 +1764,10 @@ footer {
             <i class="fas fa-gamepad pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Hand-bent LED in authentic Japanese art style — no other gaming neon looks like this.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4rC5KA5" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+          </div>
+          <a href="https://amzn.to/4rC5KA5" class="btn-amazon-solo" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> View on Amazon</a>
         </div>
       </div>
 
@@ -1560,8 +1803,14 @@ footer {
             <i class="fas fa-star pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Available in custom sizes — rare for anime neons at this price point.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4bMgqaN" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips">
+            <span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span>
+            <span class="chip-store chip-ali">AliExpress</span>
+          </div>
+          <div class="btn-group">
+            <a href="https://amzn.to/4bMgqaN" class="btn-amazon" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> Amazon</a>
+            <a href="https://s.click.aliexpress.com/e/_c4TqYJ1P" class="btn-aliexpress" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> AliExpress</a>
+          </div>
         </div>
       </div>
 
@@ -1597,8 +1846,8 @@ footer {
             <i class="fas fa-film pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> AI colour-sync via HDMI 2.1 + Alexa support — turns any room into a cinema effortlessly.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4runxdb" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips"><span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span></div>
+          <a href="https://amzn.to/4runxdb" class="btn-amazon-solo" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> View on Amazon</a>
         </div>
       </div>
 
@@ -1613,8 +1862,8 @@ footer {
             <i class="fas fa-film pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> 33 modes + built-in Bluetooth speaker — the only projector that doubles as a sound system.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4tteeLB" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips"><span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span></div>
+          <a href="https://amzn.to/4tteeLB" class="btn-amazon-solo" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> View on Amazon</a>
         </div>
       </div>
 
@@ -1629,8 +1878,8 @@ footer {
             <i class="fas fa-film pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> CRI 97+ full-spectrum RGB — professional studio-grade lighting at a consumer price.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/407JiDa" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips"><span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span></div>
+          <a href="https://amzn.to/407JiDa" class="btn-amazon-solo" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> View on Amazon</a>
         </div>
       </div>
 
@@ -1666,8 +1915,8 @@ footer {
             <i class="fas fa-fire pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Multiple colour options with remote dimmer — the Bat Cave sign that went viral on Pinterest 2026.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4cnPjmF" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips"><span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span></div>
+          <a href="https://amzn.to/4cnPjmF" class="btn-amazon-solo" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> View on Amazon</a>
         </div>
       </div>
 
@@ -1682,8 +1931,8 @@ footer {
             <i class="fas fa-fire pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Comes with both USB and wall adapter — works anywhere, no dongles needed.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/402bB5Z" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips"><span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span></div>
+          <a href="https://amzn.to/402bB5Z" class="btn-amazon-solo" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> View on Amazon</a>
         </div>
       </div>
 
@@ -1698,8 +1947,113 @@ footer {
             <i class="fas fa-fire pick-badge-icon"></i>
             <span class="pick-badge-text"><strong>NeonRoom Pick:</strong> Cold-white LED with smooth dimming — the skull neon that photographs best for setups.</span>
           </div>
-          <div class="p-card-price">⟶ Check Current Price on Amazon</div>
-          <a href="https://amzn.to/4bItQoh" class="p-card-cta" target="_blank" rel="noopener">View on Amazon</a>
+          <div class="store-chips"><span class="chip-store chip-amz"><i class="fab fa-amazon"></i> Amazon</span></div>
+          <a href="https://amzn.to/4bItQoh" class="btn-amazon-solo" target="_blank" rel="noopener"><i class="fab fa-amazon"></i> View on Amazon</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- =====================
+     FAIRY LIGHTS
+     ===================== -->
+<section id="fairy-lights" class="fairy-section">
+  <div class="section-wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-label">Section 06 — Cozy & Aesthetic</span>
+        <h2 class="sec-title">Fairy Lights <span>&amp; Cozy Vibes</span></h2>
+      </div>
+      <p class="sec-desc">Soft glows for dreamy spaces. Bedroom vibes that hit different at night.</p>
+    </div>
+
+    <div class="grid-3 stagger">
+
+      <!-- F Card 1 -->
+      <div class="f-card">
+        <div class="f-card-img">
+          <span class="f-badge">COZY PICK</span>
+          <img src="https://i.postimg.cc/V6WhCbHb/Sc1a6c2ee37554e5692b251a6415334ec-V-jpg-960x960q75-jpg.avif" alt="LED String Decoration Fairy Light" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">LED String Decoration Fairy Light</div>
+          <div class="f-pick"><strong>NeonRoom Pick:</strong> Versatile string light perfect for bedroom walls, windows and canopy setups.</div>
+          <div class="store-chips"><span class="chip-store chip-ali">AliExpress</span></div>
+          <a href="https://s.click.aliexpress.com/e/_c3ZaUSqz" class="btn-aliexpress" style="margin-top:auto;" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> View on AliExpress</a>
+        </div>
+      </div>
+
+      <!-- F Card 2 -->
+      <div class="f-card">
+        <div class="f-card-img">
+          <span class="f-badge">BESTSELLER</span>
+          <img src="https://i.postimg.cc/bJ1ZHqQ3/S733a117ff4034fc396e30e365e7633c34-jpg-960x960q75-jpg.avif" alt="LED Fairy Lights Battery Powered Copper Wire" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">LED Fairy Lights — Battery Powered Copper Wire</div>
+          <div class="f-pick"><strong>NeonRoom Pick:</strong> No power outlet needed — pure copper wire with a warm golden glow. Great for shelves and headboards.</div>
+          <div class="store-chips"><span class="chip-store chip-ali">AliExpress</span></div>
+          <a href="https://s.click.aliexpress.com/e/_c4SlFR7L" class="btn-aliexpress" style="margin-top:auto;" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> View on AliExpress</a>
+        </div>
+      </div>
+
+      <!-- F Card 3 -->
+      <div class="f-card">
+        <div class="f-card-img">
+          <span class="f-badge">VIRAL 2026</span>
+          <img src="https://i.postimg.cc/WpKG74Lw/S94ea2e447bd84cdcafb973fc8878eb4a-M-jpg-960x960q75-jpg.avif" alt="LED String Crystal Bubble Ball Fairy Light" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">LED String Crystal Bubble Ball Fairy Light</div>
+          <div class="f-pick"><strong>NeonRoom Pick:</strong> Crystal bubble balls create a magical scattered-light effect that photographs beautifully.</div>
+          <div class="store-chips"><span class="chip-store chip-ali">AliExpress</span></div>
+          <a href="https://s.click.aliexpress.com/e/_c3gyBqMp" class="btn-aliexpress" style="margin-top:auto;" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> View on AliExpress</a>
+        </div>
+      </div>
+
+      <!-- F Card 4 -->
+      <div class="f-card">
+        <div class="f-card-img">
+          <span class="f-badge">SUMMER VIBES</span>
+          <img src="https://i.postimg.cc/bN9Qf9Sx/S0a70a0154e204176b512c150a65bde7fc-jpg-960x960q75-jpg.avif" alt="Flamingo Pineapple Palm Tree String Lights" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">Flamingo Pineapple Palm Tree String Lights</div>
+          <div class="f-pick"><strong>NeonRoom Pick:</strong> Fun novelty string lights for an instant tropical-summer bedroom vibe.</div>
+          <div class="store-chips"><span class="chip-store chip-ali">AliExpress</span></div>
+          <a href="https://s.click.aliexpress.com/e/_c31sMd8z" class="btn-aliexpress" style="margin-top:auto;" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> View on AliExpress</a>
+        </div>
+      </div>
+
+      <!-- F Card 5 -->
+      <div class="f-card">
+        <div class="f-card-img">
+          <span class="f-badge">DREAMY GLOW</span>
+          <img src="https://ae01.alicdn.com/kf/S9e1b2c3d45764a5e89f0b1c2d3e4f5g6h.jpg" alt="LED String Lights Copper Silver Wire Garland" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">LED Copper Silver Wire Garland Light</div>
+          <div class="f-pick"><strong>NeonRoom Pick:</strong> Silver wire with cool-white LEDs — perfect for a minimalist modern room aesthetic.</div>
+          <div class="store-chips"><span class="chip-store chip-ali">AliExpress</span></div>
+          <a href="https://s.click.aliexpress.com/e/_c4nak2l7" class="btn-aliexpress" style="margin-top:auto;" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> View on AliExpress</a>
+        </div>
+      </div>
+
+      <!-- F Card 6 -->
+      <div class="f-card">
+        <div class="f-card-img">
+          <span class="f-badge">SOLAR 🌿</span>
+          <img src="https://ae01.alicdn.com/kf/S2a3b4c5d67854b6c90e1f2a3b4c5d6e7f.jpg" alt="Solar Powered Artificial Ivy Fairy Lights" loading="lazy">
+        </div>
+        <div class="f-card-body">
+          <div class="f-card-name">Solar Artificial Ivy Fairy Lights — 8 Modes</div>
+          <div class="f-pick"><strong>NeonRoom Pick:</strong> Solar-powered fake ivy with 8 light modes — zero running costs, perfect for garden walls and balconies.</div>
+          <div class="store-chips"><span class="chip-store chip-ali">AliExpress</span></div>
+          <a href="https://s.click.aliexpress.com/e/_c3URkZ1B" class="btn-aliexpress" style="margin-top:auto;" target="_blank" rel="noopener"><i class="fas fa-shopping-bag"></i> View on AliExpress</a>
         </div>
       </div>
 
@@ -1788,6 +2142,7 @@ footer {
         <span class="about-tag active">Gaming Setup</span>
         <span class="about-tag active">Anime Aesthetic</span>
         <span class="about-tag">Gotham Vibes</span>
+        <span class="about-tag active">Fairy Lights 🌸</span>
         <span class="about-tag">Digital Creator</span>
         <span class="about-tag active">2026 Trends</span>
       </div>
@@ -1917,6 +2272,7 @@ footer {
   <div class="trust-item"><i class="fas fa-shield-alt"></i> Secure Checkout</div>
   <div class="trust-item"><i class="fas fa-lock"></i> DigiStore24 Verified</div>
   <div class="trust-item"><i class="fab fa-amazon"></i> Amazon Associates Partner</div>
+  <div class="trust-item"><i class="fas fa-shopping-bag"></i> AliExpress Affiliate Partner</div>
   <div class="trust-item"><i class="fas fa-bolt"></i> Instant Digital Delivery</div>
   <div class="trust-item"><i class="fas fa-undo"></i> Satisfaction Guaranteed</div>
 </div>
@@ -1932,10 +2288,12 @@ footer {
     <a href="#anime">Anime</a>
     <a href="#movie">Pop Culture</a>
     <a href="#new-collection">2026 New</a>
+    <a href="#fairy-lights">Fairy Lights</a>
     <a href="#digital">Creator Tools</a>
+    <a href="#about">About</a>
   </div>
   <p class="footer-copy">© 2026 NeonRoom Decor. All rights reserved.</p>
-  <p class="disclaimer">As an Amazon Associate and DigiStore24 Partner, we may earn commissions from qualifying purchases and downloads. Product prices and availability are accurate as of the date listed and are subject to change.</p>
+  <p class="disclaimer">As an Amazon Associate, AliExpress Affiliate and DigiStore24 Partner, we may earn commissions from qualifying purchases. Product prices and availability are accurate as of date listed and are subject to change. AliExpress products may have longer shipping times — typically 2–4 weeks.</p>
 </footer>
 
 <script>
