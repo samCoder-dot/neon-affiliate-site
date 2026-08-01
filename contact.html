@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EM2YRTVDET"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EM2YRTVDET');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | NeonRoom</title>
+<meta property="og:title" content="Contact NeonRoom" />
+<meta property="og:description" content="Get in touch with the NeonRoom team." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NeonRoom" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root {
+  --black:     #060608;
+  --panel:     #0e0e12;
+  --panel-2:   #14141a;
+  --border:    rgba(255,255,255,0.07);
+  --cyan:      #00f5d4;
+  --purple:    #c026d3;
+  --red:       #ff2d55;
+  --gold:      #f0b429;
+  --text:      #e8e8f0;
+  --muted:     #6b6b80;
+  --font-head: 'Bebas Neue', sans-serif;
+  --font-body: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* NAVBAR */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(6,6,8,0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-family: var(--font-head); font-size: 1.6rem; letter-spacing: 1px; }
+.logo em { font-style: normal; color: var(--cyan); }
+.menu-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+.nav-links { list-style: none; display: flex; gap: 24px; flex-wrap: wrap; }
+.nav-links a { color: var(--text); font-size: 0.9rem; font-weight: 600; }
+.nav-links a:hover { color: var(--cyan); text-decoration: none; }
+@media (max-width: 800px) {
+  .menu-toggle { display: block; }
+  .nav-links { display: none; width: 100%; flex-direction: column; gap: 12px; padding-top: 12px; }
+  .nav-links.open { display: flex; }
+}
+
+/* LEGAL PAGE CONTENT */
+.legal-wrap {
+  max-width: 780px; margin: 0 auto; padding: 60px 24px 80px;
+}
+.legal-eyebrow {
+  font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 2px;
+  color: var(--cyan); font-size: 0.75rem; margin-bottom: 12px;
+}
+.legal-title {
+  font-family: var(--font-head); font-size: 2.8rem; letter-spacing: 1px;
+  margin-bottom: 8px; line-height: 1.1;
+}
+.legal-updated { color: var(--muted); font-size: 0.85rem; margin-bottom: 40px; }
+.legal-wrap h2 {
+  font-family: var(--font-head); font-size: 1.5rem; letter-spacing: 0.5px;
+  color: var(--cyan); margin: 36px 0 14px;
+}
+.legal-wrap p { margin-bottom: 16px; color: var(--text); opacity: 0.92; }
+.legal-wrap ul { margin: 0 0 16px 20px; }
+.legal-wrap li { margin-bottom: 8px; opacity: 0.92; }
+.legal-wrap strong { color: #fff; }
+.legal-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px; margin: 24px 0;
+}
+.contact-form { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+.contact-form input, .contact-form textarea {
+  background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px;
+  padding: 14px; color: var(--text); font-family: var(--font-body); font-size: 0.95rem;
+}
+.contact-form textarea { min-height: 140px; resize: vertical; }
+.contact-form button {
+  background: var(--cyan); color: #060608; border: none; border-radius: 8px;
+  padding: 14px; font-family: var(--font-body); font-weight: 700; font-size: 0.95rem;
+  cursor: pointer; letter-spacing: 0.5px;
+}
+.contact-form button:hover { opacity: 0.9; }
+.contact-alt { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border); padding: 40px 24px; text-align: center;
+}
+.footer-logo { font-family: var(--font-head); font-size: 1.4rem; margin-bottom: 16px; }
+.footer-logo em { font-style: normal; color: var(--cyan); }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-links a { color: var(--muted); font-size: 0.85rem; }
+.footer-links a:hover { color: var(--cyan); text-decoration: none; }
+.footer-copy { color: var(--muted); font-size: 0.8rem; margin-bottom: 8px; }
+.disclaimer { color: var(--muted); font-size: 0.75rem; max-width: 700px; margin: 0 auto; opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="logo">NEON<em>ROOM</em></div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#dark-hero">Dark Hero</a></li>
+      <li><a href="index.html#gaming">Gaming</a></li>
+      <li><a href="index.html#anime">Anime</a></li>
+      <li><a href="index.html#movie">Pop Culture</a></li>
+      <li><a href="index.html#new-collection">2026 New</a></li>
+      <li><a href="index.html#fairy-lights" style="color:#ff6b9d;">Fairy Lights 🌸</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="legal-wrap">
+  <div class="legal-eyebrow">Get in Touch</div>
+  <h1 class="legal-title">Contact Us</h1>
+  <p class="legal-updated">We usually reply within 2-3 business days.</p>
+
+  <p>Have a question about a product, a collaboration idea, or feedback on the Site? Send a message using the form below, or email us directly.</p>
+
+  <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="message" placeholder="Your message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-alt">
+    <p><strong>Prefer email?</strong> Reach us directly at <a href="mailto:samraanarshad3@gmail.com">samraanarshad3@gmail.com</a></p>
+    <p>For collaboration or partnership inquiries, please include a brief description of your brand or proposal.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">NEON<em>ROOM</em></div>
+  <div class="footer-links">
+    <a href="index.html#dark-hero">Dark Hero</a>
+    <a href="index.html#gaming">Gaming</a>
+    <a href="index.html#anime">Anime</a>
+    <a href="index.html#movie">Pop Culture</a>
+    <a href="index.html#new-collection">2026 New</a>
+    <a href="index.html#fairy-lights">Fairy Lights</a>
+    <a href="index.html#about">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 NeonRoom Decor. All rights reserved.</p>
+  <p class="disclaimer">As an Amazon Associate and AliExpress Affiliate, we may earn commissions from qualifying purchases. Product prices and availability are accurate as of date listed and are subject to change. AliExpress products may have longer shipping times — typically 2–4 weeks.</p>
+</footer>
+
+<script>
+const toggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
+</body>
+</html>
